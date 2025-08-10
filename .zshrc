@@ -11,7 +11,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=~/bin:/opt/homebrew/bin:$PATH
+export PATH=~/bin:/opt/homebrew/bin:~/dev/flutter/bin:/opt/homebrew/opt/php@8.1/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -160,3 +160,9 @@ source "$(brew --prefix)/etc/bash_completion.d/goto.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/dev/github/dotfiles/.p10k.zsh.
 [[ ! -f ~/dev/github/dotfiles/.p10k.zsh ]] || source ~/dev/github/dotfiles/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
