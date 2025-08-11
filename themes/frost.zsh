@@ -37,7 +37,7 @@ ZLE_RPROMPT_INDENT=0
     vcs                     # git status
     # =========================[ Line #2 ]=========================
     newline                 # \n
-    # prompt_char           # prompt symbol
+    prompt_char           # prompt symbol
   )
 
   # The list of segments shown on the right. Fill it with less important segments.
@@ -140,7 +140,7 @@ ZLE_RPROMPT_INDENT=0
   # as POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND below.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX=""
-  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$"
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=""
   # Connect right prompt lines with these symbols.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX=
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX=
@@ -166,17 +166,17 @@ ZLE_RPROMPT_INDENT=0
   # Separator between same-color segments on the left.
   typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='\uE0B1'
   # Separator between same-color segments on the right.
-  typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='\uE0B3'
+  typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=''
   # Separator between different-color segments on the left.
   typeset -g POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\uE0B0'
   # Separator between different-color segments on the right.
-  typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\uE0B2'
+  typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
   # The right end of left prompt.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL='\uE0B0'
   # The left end of right prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='\uE0B2'
   # The left end of left prompt.
-  typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL='\uE0B2'
+  typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=
   # The right end of right prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL='\uE0B0'
   # Left prompt terminator for lines without any segments.
@@ -354,9 +354,10 @@ ZLE_RPROMPT_INDENT=0
 
   #####################################[ vcs: git status ]######################################
   # Version control system colors.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=113
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=183
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=113
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=183
+  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREBACKGROUND=15
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=214
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=183
   typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=183
   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
 
@@ -914,10 +915,10 @@ ZLE_RPROMPT_INDENT=0
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=51
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND=236
   # Context color in SSH without privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=3
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=0
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=60
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=15
   # Default context color (no privileges, no SSH).
-  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=60
+  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=166
   typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=15
 
   # Context format when running with privileges: user@hostname.
@@ -934,7 +935,7 @@ ZLE_RPROMPT_INDENT=0
   # Custom icon.
   # typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
-  # typeset -g POWERLEVEL9K_CONTEXT_PREFIX='with '
+  typeset -g POWERLEVEL9K_CONTEXT_PREFIX=''
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
@@ -1745,3 +1746,4 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+

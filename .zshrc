@@ -12,6 +12,8 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/bin:/opt/homebrew/bin:~/dev/flutter/bin:/opt/homebrew/opt/php@8.1/bin:$PATH
+export PATH=/Users/william/Library/Android/sdk/emulator:$PATH
+export PATH="/Applications/IntelliJ IDEA.app/Contents/MacOS:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
