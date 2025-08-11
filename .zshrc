@@ -167,4 +167,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+export LSCOLORS="DxfxCxdxexegedabagxHac"
+export LS_COLORS="di=1;33:ln=35:so=1;32:pi=33:ex=34:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=0;1;47:ow=30;42"
