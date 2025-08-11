@@ -120,6 +120,12 @@ ZLE_RPROMPT_INDENT=0
   # icon overlap when using non-monospace fonts. When set to `none`, spaces are not added.
   typeset -g POWERLEVEL9K_ICON_PADDING=moderate
 
+  # Basic style options that define the overall look of your prompt. You probably don't want to
+  # change them.
+  typeset -g POWERLEVEL9K_BACKGROUND=                            # transparent background
+  typeset -g POWERLEVEL9K_{LEFT,RIGHT}_SUBSEGMENT_SEPARATOR=' '  # separate segments with a space
+  typeset -g POWERLEVEL9K_{LEFT,RIGHT}_SEGMENT_SEPARATOR=        # no end-of-line symbol
+
   # When set to true, icons appear before content on both sides of the prompt. When set
   # to false, icons go after content. If empty or not set, icons go before content in the left
   # prompt and after content in the right prompt.
@@ -162,6 +168,7 @@ ZLE_RPROMPT_INDENT=0
     # End filler on the edge of the screen if there are no right segments on the first line.
     typeset -g POWERLEVEL9K_EMPTY_LINE_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='%{%}'
   fi
+
 
   # Separator between same-color segments on the left.
   typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='\uE0B1'
@@ -354,11 +361,10 @@ ZLE_RPROMPT_INDENT=0
 
   #####################################[ vcs: git status ]######################################
   # Version control system colors.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=183
-  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREBACKGROUND=15
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=214
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=183
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=183
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=153
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=217
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=153
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=153
   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
 
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
@@ -494,6 +500,7 @@ ZLE_RPROMPT_INDENT=0
   typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=-1
 
   # Custom icon.
+   typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION=''
   # typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
   # typeset -g POWERLEVEL9K_VCS_PREFIX='on '
@@ -501,7 +508,7 @@ ZLE_RPROMPT_INDENT=0
   # Show status of repositories of these types. You can add svn and/or hg if you are
   # using them. If you do, your prompt may become slow even when your current directory
   # isn't in an svn or hg reposotiry.
-  typeset -g POWERLEVEL9K_VCS_BACKENDS=(git)
+  #typeset -g POWERLEVEL9K_VCS_BACKENDS=(git)
 
   ##########################[ status: exit code of the last command ]###########################
   # Enable OK_PIPE, ERROR_PIPE and ERROR_SIGNAL status states to allow us to enable, disable and
@@ -1746,4 +1753,3 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
-
