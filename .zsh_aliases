@@ -2,3 +2,5 @@
 
 alias xx="open ."
 alias ll="ls -lha"
+alias vim="nvim"
+alias vi="nvim"
