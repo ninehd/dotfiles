@@ -100,6 +100,7 @@ link_file "$DOTFILES_DIR/.zshrc"            "$HOME/.zshrc"
 link_file "$DOTFILES_DIR/.gitignore"        "$HOME/.gitignore"
 link_file "$DOTFILES_DIR/.zsh_plugins.txt"  "$HOME/.zsh_plugins.txt"
 link_file "$DOTFILES_DIR/starship.toml"     "$CONFIG_DIR/starship.toml"
+link_file "$DOTFILES_DIR/nvim"              "$CONFIG_DIR/nvim"
 
 echo "=== Done ==="
 echo "Homebrew, base tools, Antidote, Starship and fnm are ready."
