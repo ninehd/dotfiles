@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+alias xx="open ."
+alias ll="ls -lha"

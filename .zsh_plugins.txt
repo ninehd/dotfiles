@@ -1,0 +1,26 @@
+# --- Completions core ---
+mattmc3/ez-compinit
+zsh-users/zsh-completions kind:fpath path:src
+
+# --- Completion styles (after compinit) ---
+belak/zsh-utils path:completion/functions kind:autoload post:compstyle_zshzoo_setup
+
+# --- Libraries & utilities ---
+ohmyzsh/ohmyzsh path:lib
+belak/zsh-utils path:utility
+ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/git-auto-fetch
+fdellwing/zsh-bat
+unixorn/fzf-zsh-plugin
+
+# --- History ---
+belak/zsh-utils path:history
+zsh-users/zsh-history-substring-search
+
+# --- Syntax & suggestions (order matters) ---
+zdharma-continuum/fast-syntax-highlighting
+zsh-users/zsh-autosuggestions
+
+# --- FZF completion UI (keep LAST; remove if not using fzf) ---
+Aloxaf/fzf-tab
